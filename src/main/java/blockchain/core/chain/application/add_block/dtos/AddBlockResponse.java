@@ -1,5 +1,6 @@
 package blockchain.core.chain.application.add_block.dtos;
 
-public class AddBlockResponse {
+import blockchain.core.chain.application.dtos.BlockInfo;
 
+public record AddBlockResponse(BlockInfo block) {
 }

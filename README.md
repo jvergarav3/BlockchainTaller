@@ -10,12 +10,13 @@ at startup:
 
 ## Requirements
 
-- JDK 25
+- JDK 21+
 - Maven 3.9+
 - JavaFX is downloaded by Maven (`org.openjfx`, version in `javafx.version`); no manual install needed.
 
-> JavaFX 25 requires JDK 23+. To build with JDK 21, set `maven.compiler.release` to `21` and
-> `javafx.version` to a `21.x` release in `pom.xml`.
+> The project is configured for JDK 21 (`maven.compiler.release` = `21`) and JavaFX 21.0.5
+> (`javafx.version`) in `pom.xml`. To use a newer JavaFX (e.g. 25, which requires JDK 23+), raise both
+> properties.
 
 ## Build and test
 
@@ -26,9 +27,23 @@ mvn clean package
 
 ## Run
 
-- **IDE (recommended):** run `blockchain.BlockchainApplication`. Terminal mode reads from standard input,
-  so it needs a real console.
-- **Maven:** `mvn javafx:run`. If terminal input does not reach the program through Maven, use the IDE.
+`blockchain.BlockchainApplication` accepts an optional mode:
+
+| Mode | What it does |
+|---|---|
+| `gui` | JavaFX desktop UI only |
+| `cli` | terminal only |
+| `menu` (default) | asks which front end to open |
+
+- **IDE (recommended):** run `blockchain.BlockchainApplication` with the mode as program argument.
+  Terminal mode reads from standard input, so it needs a real console.
+- **Maven:** `mvn javafx:run -Djavafx.args=gui` (or `cli`, `menu`). If terminal input does not reach the
+  program through Maven, use the IDE.
+
+The desktop UI draws the chain as linked nodes (`head`, `tail`, `size`) that wrap into a zigzag, with a
+stats strip, live search (text / ID / hash), toast notifications and modal dialogs. Click a block to see its
+data, hashes and relations, copy hashes, jump to the previous/next block and rectify or annul it.
+Shortcuts: `←`/`→` navigate, `Esc` close, `Ctrl+F` search, `Ctrl+N` new block, `Ctrl+L` validate.
 
 ## Architecture
 
@@ -89,9 +104,9 @@ Base: `DataStructures/LinkedList` (`Nodo<T>`, `Lista<T>`, package `co.edu.unicar
 | `adicionarFinal` | Walks the whole list on every append | `addLast` with a `tail` pointer (O(1)) |
 | `adicionarEntreNodos` | `Integer.parseInt(toString())`, numbers only; inserting in the middle would break hashes | Removed |
 | `eliminar` | Does not decrement `tamaño`, NPE on empty list, debug `println` | `removeFirst` fixed (not exposed by `Blockchain`) |
-| `imprimir` | The data structure prints to the console | Removed; `SimpleLinkedList` is `Iterable<T>`, `presentation` prints |
+| `imprimir` | The data structure prints to the console | Removed; `SimpleLinkedList` is `Iterable<Node<T>>`, `presentation` prints |
 | private `estaVacia`, `tamaño` | No public way to read the state | Public `isEmpty()`, `size()` |
-| (missing) | `searchBlock` needs a lookup | `find(Predicate<T>)`, `getLast()` |
+| (missing) | `searchBlock` needs a lookup | `find(Predicate<Node<T>>)`, `getLast()` |
 
 ## Status
 

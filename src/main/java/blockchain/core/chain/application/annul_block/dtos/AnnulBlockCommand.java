@@ -1,5 +1,4 @@
 package blockchain.core.chain.application.annul_block.dtos;
 
-public class AnnulBlockCommand {
-
+public record AnnulBlockCommand(int blockId) {
 }

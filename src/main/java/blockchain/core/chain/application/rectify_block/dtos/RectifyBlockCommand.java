@@ -1,5 +1,4 @@
 package blockchain.core.chain.application.rectify_block.dtos;
 
-public class RectifyBlockCommand {
-
+public record RectifyBlockCommand(int blockId, String newData) {
 }

@@ -1,5 +1,6 @@
 package blockchain.core.chain.application.annul_block.dtos;
 
-public class AnnulBlockResponse {
+import blockchain.core.chain.application.dtos.BlockInfo;
 
+public record AnnulBlockResponse(BlockInfo annulmentBlock) {
 }

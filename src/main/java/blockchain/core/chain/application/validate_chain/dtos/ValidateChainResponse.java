@@ -1,5 +1,4 @@
 package blockchain.core.chain.application.validate_chain.dtos;
 
-public class ValidateChainResponse {
-
+public record ValidateChainResponse(boolean valid, int blocksChecked, Integer firstInvalidBlockId) {
 }
