@@ -7,6 +7,11 @@ import blockchain.core.chain.presentation.javafx.FxApp;
 import java.util.Locale;
 import java.util.Scanner;
 
+/*
+Joan Sebastian Vergara Valencia - 6902510055
+Dylan Mayol Puertas Girón - 6902510052
+Oscar David Tapias - 6902420043
+*/
 public class BlockchainApplication {
 
     private static final String USAGE = """
@@ -37,9 +42,9 @@ public class BlockchainApplication {
 
                     ===== Blockchain =====
                     1. Terminal
-                    2. Interfaz gráfica (JavaFX)
+                    2. Interfaz grafica (JavaFX)
                     0. Salir""");
-            System.out.print("Opción: ");
+            System.out.print("Opcion: ");
             if (!scanner.hasNextLine()) {
                 return;
             }
@@ -55,7 +60,7 @@ public class BlockchainApplication {
                 case "0" -> {
                     return;
                 }
-                default -> System.out.println("Opción no válida.");
+                default -> System.out.println("Opción no valida.");
             }
         }
     }

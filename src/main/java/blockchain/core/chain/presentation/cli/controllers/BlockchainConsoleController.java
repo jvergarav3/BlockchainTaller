@@ -33,7 +33,7 @@ public class BlockchainConsoleController {
     public void run() {
         while (true) {
             out.println(ConsoleFormatter.menu());
-            String option = prompt("Opción: ");
+            String option = prompt("El ID debe ser el numero del bloque para estos casos\nOpción: ");
             if (option == null || option.equals("0")) {
                 out.println("Hasta pronto.");
                 return;
@@ -94,7 +94,7 @@ public class BlockchainConsoleController {
         }
         String data = prompt("Nuevos datos: ");
         var response = config.rectifyBlockUseCase().execute(new RectifyBlockCommand(id, data));
-        out.println("Bloque de corrección agregado:\n" + ConsoleFormatter.block(response.correctionBlock()));
+        out.println("Bloque de correccion agregado:\n" + ConsoleFormatter.block(response.correctionBlock()));
     }
 
     private void annulBlock() {
@@ -103,7 +103,7 @@ public class BlockchainConsoleController {
             return;
         }
         var response = config.annulBlockUseCase().execute(new AnnulBlockCommand(id));
-        out.println("Bloque de anulación agregado:\n" + ConsoleFormatter.block(response.annulmentBlock()));
+        out.println("Bloque de anulacion agregado:\n" + ConsoleFormatter.block(response.annulmentBlock()));
     }
 
     private void validateChain() {
