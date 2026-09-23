@@ -14,7 +14,11 @@ import blockchain.core.chain.domain.inputports.SearchBlockUseCase;
 import blockchain.core.chain.domain.inputports.ValidateChainUseCase;
 import blockchain.core.chain.domain.outputports.BlockchainRepositoryPort;
 import blockchain.core.chain.infrastructure.adapter.repository.InMemoryBlockchainRepositoryAdapter;
-
+/*
+Joan Sebastian Vergara Valencia - 6902510055
+Dylan Mayol Puertas Girón - 6902510052
+Oscar David Tapias - 6902420043
+*/
 public class BlockchainConfiguration {
 
     private final AddBlockUseCase addBlockUseCase;

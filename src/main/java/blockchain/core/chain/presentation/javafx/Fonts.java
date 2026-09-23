@@ -2,7 +2,11 @@ package blockchain.core.chain.presentation.javafx;
 
 import javafx.scene.Node;
 import javafx.scene.text.Font;
-
+/*
+Joan Sebastian Vergara Valencia - 6902510055
+Dylan Mayol Puertas Girón - 6902510052
+Oscar David Tapias - 6902420043
+*/
 import java.util.List;
 
 public final class Fonts {

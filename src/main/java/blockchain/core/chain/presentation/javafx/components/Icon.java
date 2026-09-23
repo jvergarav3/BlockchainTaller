@@ -5,7 +5,11 @@ import javafx.scene.shape.SVGPath;
 import javafx.scene.transform.Scale;
 
 import java.util.Map;
-
+/*
+Joan Sebastian Vergara Valencia - 6902510055
+Dylan Mayol Puertas Girón - 6902510052
+Oscar David Tapias - 6902420043
+*/
 public class Icon extends Pane {
 
     private static final double GRID = 24;

@@ -11,7 +11,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Optional;
-
+/*
+Joan Sebastian Vergara Valencia - 6902510055
+Dylan Mayol Puertas Girón - 6902510052
+Oscar David Tapias - 6902420043
+*/
 public class Blockchain {
 
     private static final String ANNULMENT_DATA = "Annulment of block %d";

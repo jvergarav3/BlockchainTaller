@@ -21,7 +21,11 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
-
+/*
+Joan Sebastian Vergara Valencia - 6902510055
+Dylan Mayol Puertas Girón - 6902510052
+Oscar David Tapias - 6902420043
+*/
 public class ChainView extends Pane {
 
     private static final double ROOM = 64;

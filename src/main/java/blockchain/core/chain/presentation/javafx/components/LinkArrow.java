@@ -4,7 +4,11 @@ import javafx.scene.Group;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.text.Text;
-
+/*
+Joan Sebastian Vergara Valencia - 6902510055
+Dylan Mayol Puertas Girón - 6902510052
+Oscar David Tapias - 6902420043
+*/
 public class LinkArrow extends Group {
 
     private static final double HEAD_LENGTH = 8;
